@@ -103,6 +103,11 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
+          title: 'main',
+          to: '/main'
+        },
+        {
+          icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire'
         }

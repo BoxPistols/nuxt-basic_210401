@@ -97,13 +97,13 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-chart-bubble',
+          title: 'main',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'main',
+          icon: 'mdi-apps',
+          title: 'Welcome',
           to: '/main'
         },
         {

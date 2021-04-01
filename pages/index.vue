@@ -8,7 +8,7 @@
       <div class="userLists">
         <ul>
           <li v-for="user in users" :key="user.id">
-            {{ user.id }}: {{ user.name }} / {{ user.username }}<br>
+            {{ user.id }}: {{ user.name }} / {{ user.username }}<br />
             {{ user.company.name }}
           </li>
         </ul>
@@ -19,21 +19,25 @@
 
 <script>
 /* API:
-** https://jsonplaceholder.typicode.com/users/
-** https://jsonplaceholder.typicode.com/guide/
-*/
+ ** https://jsonplaceholder.typicode.com/users/
+ ** https://jsonplaceholder.typicode.com/guide/
+ */
 //import axios from 'axios'
 const axios = require("axios");
 let url = "https://jsonplaceholder.typicode.com/users/";
 
 export default {
-  asyncData({ params }) {
-    return axios.get(url).then(res => {
-      return { users: res.data };
-    })
-    .catch ((e) => {
-      console.log(e.response.status)
-    })
+  asyncData({ params, error }) {
+    return axios
+      .get(url)
+      .then(res => {
+        return { users: res.data };
+      })
+      .catch(e => {
+        // error({ users: e.response.status, message: e.message });
+        error({ statusCode: e.response.status, message: e.response.message });
+        console.log(e.response.status)
+      });
   },
 
   data() {

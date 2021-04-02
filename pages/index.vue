@@ -5,14 +5,41 @@
         {{ msg }}
       </h1>
 
-      <div class="userLists">
+      <div class="images">
+        <img src="~/assets/image/sushi.png" alt="" />
+      </div>
+
+      <v-simple-table class="userLists">
+        <template v-slot:default>
+          <thead>
+            <tr>
+              <th class="text-left">
+                Name
+              </th>
+              <th class="text-left">
+                Calories
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="user in users" :key="user.id">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.company.name }}</td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+
+      <!-- <div class="userLists">
         <ul>
           <li v-for="user in users" :key="user.id">
             {{ user.id }}: {{ user.name }} / {{ user.username }}<br />
             {{ user.company.name }}
           </li>
         </ul>
-      </div>
+      </div> -->
     </v-col>
   </v-row>
 </template>
@@ -36,7 +63,7 @@ export default {
       .catch(e => {
         // error({ users: e.response.status, message: e.message });
         error({ statusCode: e.response.status, message: e.response.message });
-        console.log(e.response.status)
+        console.log(e.response.status);
       });
   },
 
@@ -49,8 +76,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.userLists {
+  display: flex;
+  justify-content: center;
+  margin: 24px auto;
+}
 li {
   text-align: left;
   margin-bottom: 4px;
+}
+img {
+  max-width: 400px;
 }
 </style>

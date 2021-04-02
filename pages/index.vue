@@ -4,7 +4,8 @@
             <h1>
                 {{ msg }}
             </h1>
-
+            <h2>{{ $store.state.message }}</h2>
+            <h2>{{ $store.state.num }}</h2>
             <div class="images">
                 <img src="~/assets/image/SpringSweets.jpg" alt="" />
             </div>
@@ -45,8 +46,8 @@
  ** https://jsonplaceholder.typicode.com/users/
  ** https://jsonplaceholder.typicode.com/guide/
  */
-//import axios from 'axios'
-const axios = require("axios");
+import axios from 'axios'
+// const axios = require("axios");
 let url = "https://jsonplaceholder.typicode.com/users/";
 
 export default {

@@ -5,9 +5,19 @@ const createStore = () => {
 		state: function() {
 			return {
 				message: 'Hello Vuex!',
-        num: 12
+				num: 12,
 			}
 		},
+        // mutations: {
+        //     updateMsg: function (state) {
+        //         state.message = "mon"
+        //     }
+        // }
+        mutations: {
+            updateMsg: function (state, payload) {
+                state.message = payload
+            }
+        }
 	})
 }
 

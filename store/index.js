@@ -8,16 +8,17 @@ const createStore = () => {
 				num: 12,
 			}
 		},
-        // mutations: {
-        //     updateMsg: function (state) {
-        //         state.message = "mon"
-        //     }
-        // }
         mutations: {
             updateMsg: function (state, payload) {
                 state.message = payload
             }
+        },
+        actions: {
+            setMessageAction: function (context) {
+                context.commit('updateMsg', 'Dispatch!!')
+            }
         }
+
 	})
 }
 

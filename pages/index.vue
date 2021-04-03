@@ -5,7 +5,7 @@
             <div>{{ $store.state.num }}</div>
             <div>{{ $store.state.message }}</div>
             <!-- <v-btn elevation="2" v-on:click="$store.commit('updateMsg', 'Second Variant')">Commit</v-btn> -->
-            <v-btn elevation="2" v-on:click="$store.dispatch('setMessageAction', 'アクション仮面のペリーロードは下田')">Set MessageAction</v-btn>
+            <v-btn elevation="2" v-on:click="$store.dispatch('setMessageAction', 'Hey Payload on Action')">Commit</v-btn>
         </v-col>
     </v-row>
 </template>
@@ -19,6 +19,4 @@ export default {
     },
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

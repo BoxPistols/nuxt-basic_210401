@@ -6,6 +6,9 @@
                 <img src="~/assets/image/SpringSweets.jpg" alt />
             </div>
 
+            <p>{{ $store.state.counter.count }}</p>
+            <v-btn class="ma-2 mb-12" v-on:click="$store.dispatch('counter/countUpAction', 1)">Count Up</v-btn>
+
             <v-simple-table class="userLists">
                 <template v-slot:default>
                     <thead>
@@ -77,17 +80,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .userLists {
-        display: flex;
-        justify-content: center;
-        margin: 24px auto;
-    }
-    li {
-        text-align: left;
-        margin-bottom: 4px;
-    }
-    img {
-        max-width: 240px;
-        border: 4px solid #fff;
-    }
+.userLists {
+    display: flex;
+    justify-content: center;
+    margin: 24px auto;
+}
+li {
+    text-align: left;
+    margin-bottom: 4px;
+}
+img {
+    max-width: 240px;
+    border: 4px solid #fff;
+}
 </style>

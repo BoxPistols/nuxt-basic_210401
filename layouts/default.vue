@@ -69,6 +69,16 @@ export default {
                 },
                 {
                     icon: 'mdi-apps',
+                    title: 'EC-Cart Count',
+                    to: '/cart',
+                },
+                {
+                    icon: 'mdi-apps',
+                    title: 'EC-Cart Result',
+                    to: '/cart-result',
+                },
+                {
+                    icon: 'mdi-apps',
                     title: 'API Table',
                     to: '/main',
                 },

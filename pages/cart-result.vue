@@ -3,7 +3,7 @@
     <v-row>
       <v-col class="text-center">
         <v-row>
-          <v-col offset="4" sm="6">
+          <v-col sm="8">
             <h3 class="text-center py-2 px-1">
               カートの中身：{{ $store.state.counter.count }}点
             </h3>
@@ -19,7 +19,15 @@
               >カートをカラにする</v-btn
             >
 
-            <v-btn class="ma-2"> 購入を確定する </v-btn>
+            <v-btn
+              class="ma-2"
+              :loading="loading"
+              :disabled="loading"
+              color="secondary"
+              @click="loader = 'loading'"
+            >
+              購入を確定する
+            </v-btn>
           </v-col>
         </v-row>
       </v-col>
@@ -32,7 +40,17 @@ export default {
   data() {
     return {
       msg: 'Result',
+      loader: null,
+      loading: false,
     }
+  },
+  watch: {
+    loader() {
+      const l = this.loader
+      this[l] = !this[l]
+      setTimeout(() => (this[l] = false), 3000)
+      this.loader = null
+    },
   },
 }
 </script>

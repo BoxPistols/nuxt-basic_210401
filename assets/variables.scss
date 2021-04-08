@@ -2,3 +2,15 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+.v-application {
+	&.theme--light {
+    // *Custom on Vuetify
+    // TODO: Research _ Vuetify has Sass-API Variables?
+		& code.debug {
+			background-color: azure;
+      border: 1px solid darken(azure, 60%);
+			padding: 4px 8px;
+		}
+	}
+}

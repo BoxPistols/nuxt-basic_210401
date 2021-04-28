@@ -3,7 +3,12 @@
     <code class="debug">{{ $data }}</code>
 
     <ul v-for="todo in getTodos" :key="todo.id">
-      <li>{{ todo.done }} {{ todo.name }} {{ todo.created }}</li>
+      <li>
+        <v-col>
+          {{ todo.done }} {{ todo.name }} {{ todo.created }}}
+          <v-btn @click="remove(todo.id)">x</v-btn>
+        </v-col>
+      </li>
     </ul>
 
     <v-row justify="space-between">
@@ -48,6 +53,9 @@ export default {
       // todo.js
       this.$store.dispatch('todos/add', this.name)
       this.name = ''
+    },
+    remove(id) {
+      this.$store.dispatch('todos/remove', id)
     },
   },
   computed: {
